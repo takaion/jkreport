@@ -180,3 +180,4 @@ TSWLatexianTemp*
 *~[0-9]*
 
 # Test files
+test*
