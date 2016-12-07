@@ -92,9 +92,6 @@
 \MAXHEIGHT=297truemm
 \SubL{\MAXWIDTH}{30truemm}{\pagewidth}
 \SubL{\MAXHEIGHT}{30truemm}{\pageheight}
-\oddsidemargin = -15truemm
-\evensidemargin= -15truemm
-\topmargin = -15truemm
 \addtolength{\textheight}{30truemm}
 \addtolength{\textwidth}{30truemm}
 
@@ -106,6 +103,9 @@
 \AddL{55mm}{0mm}{\partnerwidth}
 
 \renewcommand{\@maketitle}{
+\oddsidemargin = -15truemm
+\evensidemargin= -15truemm
+\topmargin = -15truemm
 \begin{tikzpicture}[remember picture]
   \begin{scope}[shift={(current page.south west)}]
     \node[text width=\pagewidth]  at (0,0)   {\huge \bf \makebox[\pagewidth]{\centering 情報工学科~レポート}};
@@ -184,9 +184,9 @@
 \end{tikzpicture}
 \thispagestyle{empty}
 
-\clearpage\setcounter{page}{1}
-\oddsidemargin = 0trueem
-\evensidemargin = 0trueem
-\topmargin = 0trueem
+\clearpage
+\setcounter{page}{1}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\topmargin}{4pt}
 }
-  
