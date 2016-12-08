@@ -181,3 +181,5 @@ TSWLatexianTemp*
 
 # Test files
 test*
+!/sample.tex
+!/sample.pdf
