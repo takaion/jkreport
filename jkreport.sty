@@ -92,8 +92,6 @@
 \MAXHEIGHT=297truemm
 \SubL{\MAXWIDTH}{30truemm}{\pagewidth}
 \SubL{\MAXHEIGHT}{30truemm}{\pageheight}
-\addtolength{\textheight}{30truemm}
-\addtolength{\textwidth}{30truemm}
 
 \SubL{\pagewidth}{0mm}{\tablewidth}
 \SubL{\tablewidth}{70truemm}{\recordwidth}
@@ -103,9 +101,6 @@
 \AddL{55mm}{0mm}{\partnerwidth}
 
 \renewcommand{\@maketitle}{
-\oddsidemargin = -15truemm
-\evensidemargin= -15truemm
-\topmargin = -15truemm
 \begin{tikzpicture}[remember picture]
   \begin{scope}[shift={(current page.south west)}]
     \node[text width=\pagewidth]  at (0,0)   {\huge \bf \makebox[\pagewidth]{\centering 情報工学科~レポート}};
@@ -182,11 +177,7 @@
     \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\makebox[80mm]{\centering \@studentid~\@studentname}};
   \end{scope}
 \end{tikzpicture}
-\thispagestyle{empty}
 
-\clearpage
-\setcounter{page}{1}
-\setlength{\oddsidemargin}{0pt}
-\setlength{\evensidemargin}{0pt}
-\setlength{\topmargin}{4pt}
+\thispagestyle{empty}
+\setcounter{page}{0}
 }
