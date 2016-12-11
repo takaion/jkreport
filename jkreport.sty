@@ -92,11 +92,6 @@
 \MAXHEIGHT=297truemm
 \SubL{\MAXWIDTH}{30truemm}{\pagewidth}
 \SubL{\MAXHEIGHT}{30truemm}{\pageheight}
-\oddsidemargin = -15truemm
-\evensidemargin= -15truemm
-\topmargin = -15truemm
-\addtolength{\textheight}{30truemm}
-\addtolength{\textwidth}{30truemm}
 
 \SubL{\pagewidth}{0mm}{\tablewidth}
 \SubL{\tablewidth}{70truemm}{\recordwidth}
@@ -182,11 +177,7 @@
     \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\makebox[80mm]{\centering \@studentid~\@studentname}};
   \end{scope}
 \end{tikzpicture}
-\thispagestyle{empty}
 
-\clearpage\setcounter{page}{1}
-%\oddsidemargin = 0trueem
-%\evensidemargin = 0trueem
-%\topmargin = 0trueem
+\thispagestyle{empty}
+\setcounter{page}{0}
 }
-  
