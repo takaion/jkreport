@@ -11,10 +11,10 @@
 \def\credits#1{\gdef\@credits{#1}}
 \def\teacher#1{\gdef\@teacher{#1}}
 \def\studentid#1{\gdef\@studentid{#1}}
-\def\studentname#1{\gdef\@studentname{#1}}
+\def\author#1{\gdef\@author{#1}}
 \def\grade#1{\gdef\@grade{#1}}
 \def\semester#1{\gdef\@semester{#1}}
-\def\theme#1{\gdef\@theme{#1}}
+\def\title#1{\gdef\@title{#1}}
 
 \newcounter{deadlineIndex}
 \newcounter{submitIndex}
@@ -129,7 +129,7 @@
     % 右: 判定コメント欄
     % i = 0 to 6
     \foreach \i in {0,1,2,3,4,5,6} {
-      \node[draw,text width=\resultwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(5.5,-3.2)$) {\null};
+      \node[draw, text width=\resultwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(5.5,-3.2)$) {\null};
     }
     % 判定コメント欄: レポート提出記録の真横，i=7
     \node[draw,text width=\resultwidth,nomargin,minimum height=14mm] at (5.5,-10.4) {\null};
@@ -164,17 +164,17 @@
     \node[draw,text width=60mm,nomargin,minimum height=10mm] at (1,-17.6) {\large \bf \makebox[60mm]{\centering テーマ担当教員}};
     \node[draw,text width=60mm,nomargin,minimum height=14mm] at (1,-18.8) {\large \makebox[60mm]{\centering \@teacher}};
     \node[draw,text width=15mm,nomargin,minimum height=10mm] at (4.75,-17.6) {\large \bf \makebox[15mm]{\centering 学年}};
-    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (4.75,-18.8) {\makebox[15mm]{\centering \@grade}};
+    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (4.75,-18.8) {\large \makebox[15mm]{\centering \@grade}};
     \node[draw,text width=20mm,nomargin,minimum height=10mm] at (6.5,-17.6) {\large \bf \makebox[20mm]{\centering 学期}};
-    \node[draw,text width=20mm,nomargin,minimum height=14mm] at (6.5,-18.8) {\makebox[20mm]{\centering \@semester}};
+    \node[draw,text width=20mm,nomargin,minimum height=14mm] at (6.5,-18.8) {\large \makebox[20mm]{\centering \@semester}};
     \node[draw,text width=15mm,nomargin,minimum height=10mm] at (8.25,-17.6) {\large \bf \makebox[15mm]{\centering 単位}};
-    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (8.25,-18.8) {\makebox[15mm]{\centering \@credits}};
+    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (8.25,-18.8) {\large \makebox[15mm]{\centering \@credits}};
 
     % テーマ番号〜
     \node[draw,text width=100mm,nomargin,minimum height=10mm] at (-4,-20) {\large \bf \makebox[100mm]{\centering テーマ番号~~~~~~テーマ名}};
-    \node[draw,text width=100mm,nomargin,minimum height=14mm] at (-4,-21.2) {\makebox[100mm]{\centering \@theme}};
+    \node[draw,text width=100mm,nomargin,minimum height=14mm] at (-4,-21.2) {\large \makebox[100mm]{\centering \@title}};
     \node[draw,text width=80mm,nomargin,minimum height=10mm] at (5,-20) {\large \bf \makebox[80mm]{\centering 学籍番号~~~~~~氏~~名}};
-    \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\makebox[80mm]{\centering \@studentid~\@studentname}};
+    \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\large \makebox[80mm]{\centering \@studentid~\@author}};
   \end{scope}
 \end{tikzpicture}
 
