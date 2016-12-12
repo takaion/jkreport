@@ -92,11 +92,6 @@
 \MAXHEIGHT=297truemm
 \SubL{\MAXWIDTH}{30truemm}{\pagewidth}
 \SubL{\MAXHEIGHT}{30truemm}{\pageheight}
-\oddsidemargin = -15truemm
-\evensidemargin= -15truemm
-\topmargin = -15truemm
-\addtolength{\textheight}{30truemm}
-\addtolength{\textwidth}{30truemm}
 
 \SubL{\pagewidth}{0mm}{\tablewidth}
 \SubL{\tablewidth}{70truemm}{\recordwidth}
@@ -105,7 +100,7 @@
 \AddL{45mm}{0mm}{\expdatewidth}
 \AddL{55mm}{0mm}{\partnerwidth}
 
-\renewcommand{\maketitle}{
+\renewcommand{\@maketitle}{
 \begin{tikzpicture}[remember picture]
   \begin{scope}[shift={(current page.south west)}]
     \node[text width=\pagewidth]  at (0,0)   {\huge \bf \makebox[\pagewidth]{\centering 情報工学科~レポート}};
@@ -122,13 +117,13 @@
     % 左，レコード
     \foreach \i in {1,2,3,4}{
       \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-3.2)$) {\makebox[\numwidth]{\i}};
-      \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-3.2)$) {\large \bf \makebox[\expdatewidth]{\centering \GetArray{dateOfExpm}{\i}}};
-      \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-3.2)$) {\large \bf \makebox[\partnerwidth]{\centering \GetArray{partner}{\i}}};
+      \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-3.2)$) {\large \makebox[\expdatewidth]{\centering \GetArray{dateOfExpm}{\i}}};
+      \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-3.2)$) {\large \makebox[\partnerwidth]{\centering \GetArray{partner}{\i}}};
     }
     \foreach \i in {5,6}{
       \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-3.2)$) {\makebox[\numwidth]{\null}};
-      \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-3.2)$) {\large \bf \makebox[\expdatewidth]{\centering \GetArray{dateOfExpm}{\i}}};
-      \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-3.2)$) {\large \bf \makebox[\partnerwidth]{\centering \GetArray{partner}{\i}}};
+      \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-3.2)$) {\large \makebox[\expdatewidth]{\centering \GetArray{dateOfExpm}{\i}}};
+      \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-3.2)$) {\large \makebox[\partnerwidth]{\centering \GetArray{partner}{\i}}};
     }
 
     % 右: 判定コメント欄
@@ -150,8 +145,8 @@
     \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at (-0.75,-11.6) {\large \bf \makebox[\partnerwidth]{\centering 期限年月日}};
     % 提出年月日，期限年月日のレコード
     \foreach \i in {1,2,3,4,5}{
-      \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-11.6)$) {\large \bf \makebox[\expdatewidth]{\centering \GetArray{submit}{\i}}};
-      \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-11.6)$) {\large \bf \makebox[\partnerwidth]{\centering \GetArray{deadline}{\i}}};
+      \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-11.6)$) {\large \makebox[\expdatewidth]{\centering \GetArray{submit}{\i}}};
+      \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-11.6)$) {\large \makebox[\partnerwidth]{\centering \GetArray{deadline}{\i}}};
     }
 
     % レポート提出欄の左側
@@ -182,5 +177,7 @@
     \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\makebox[80mm]{\centering \@studentid~\@studentname}};
   \end{scope}
 \end{tikzpicture}
+
+\thispagestyle{empty}
+\setcounter{page}{0}
 }
-  
