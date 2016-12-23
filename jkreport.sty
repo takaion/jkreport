@@ -107,7 +107,7 @@
     
     % 最上段の行
     \node[draw,text width=\recordwidth,nomargin,minimum height=14mm] at (-3.5,-2) {\Large \bf \makebox[\recordwidth]{\centering 実験演習記録}};
-    \node[draw,text width=\resultwidth,nomargin,minimum height=14mm] at (5.5,-2) {\large \bf \makebox[\resultwidth]{\centering 判定・指示}};
+    \node[draw,text width=\resultwidth,nomargin,minimum height=14mm] at (5.5,-2) {\Large \bf \makebox[\resultwidth]{\centering 判定・指示}};
     
     % 左，2行目
     \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at (-8.5,-3.2) {\makebox[\numwidth]{\null}};
@@ -116,27 +116,18 @@
     
     % 左，レコード
     \foreach \i in {1,2,3,4}{
-      \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-3.2)$) {\makebox[\numwidth]{\i}};
+      \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-3.2)$) {\large \makebox[\numwidth]{\i}};
       \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-3.2)$) {\large \makebox[\expdatewidth]{\centering \GetArray{dateOfExpm}{\i}}};
       \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-3.2)$) {\large \makebox[\partnerwidth]{\centering \GetArray{partner}{\i}}};
     }
     \foreach \i in {5,6}{
-      \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-3.2)$) {\makebox[\numwidth]{\null}};
+      \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-3.2)$) {\large \makebox[\numwidth]{\null}};
       \node[draw,text width=\expdatewidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-5.75,-3.2)$) {\large \makebox[\expdatewidth]{\centering \GetArray{dateOfExpm}{\i}}};
       \node[draw,text width=\partnerwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-0.75,-3.2)$) {\large \makebox[\partnerwidth]{\centering \GetArray{partner}{\i}}};
     }
 
     % 右: 判定コメント欄
-    % i = 0 to 6
-    \foreach \i in {0,1,2,3,4,5,6} {
-      \node[draw, text width=\resultwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(5.5,-3.2)$) {\null};
-    }
-    % 判定コメント欄: レポート提出記録の真横，i=7
-    \node[draw,text width=\resultwidth,nomargin,minimum height=14mm] at (5.5,-10.4) {\null};
-    % i = 8 to 13
-    \foreach \i in {8,9,10,11,12,13} {
-      \node[draw,text width=\resultwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(5.5,-3.6)$) {\null};
-    }
+    \node[draw,text width=\resultwidth,nomargin,minimum height=144mm] at (5.5,-9.9){\null};
 
     % レポート提出記録
     \node[draw,text width=\recordwidth,nomargin,minimum height=14mm] at (-3.5,-10.4) {\Large \bf \makebox[\recordwidth]{\centering レポート提出記録}};
@@ -151,8 +142,8 @@
 
     % レポート提出欄の左側
     \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at (-8.5,-11.6) {\makebox[\numwidth]{\null}};
-    \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at (-8.5,-12.6) {\makebox[\numwidth]{初}};
-    \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at (-8.5,-13.6) {\makebox[\numwidth]{再}};
+    \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at (-8.5,-12.6) {\large \makebox[\numwidth]{初}};
+    \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at (-8.5,-13.6) {\large \makebox[\numwidth]{再}};
     % 初・再の下
     \foreach \i in {3,4,5}{
       \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-11.6)$) {\makebox[\numwidth]{\null}};
@@ -160,21 +151,21 @@
 
     % 科目名〜
     \node[draw,text width=70mm,nomargin,minimum height=10mm] at (-5.5,-17.6) {\large \bf \makebox[70mm]{\centering 科目名}};
-    \node[draw,text width=70mm,nomargin,minimum height=14mm] at (-5.5,-18.8) {\large \makebox[70mm]{\centering \@classname}};
+    \node[draw,text width=70mm,nomargin,minimum height=14mm] at (-5.5,-18.8) {\Large \makebox[70mm]{\centering \@classname}};
     \node[draw,text width=60mm,nomargin,minimum height=10mm] at (1,-17.6) {\large \bf \makebox[60mm]{\centering テーマ担当教員}};
-    \node[draw,text width=60mm,nomargin,minimum height=14mm] at (1,-18.8) {\large \makebox[60mm]{\centering \@teacher}};
+    \node[draw,text width=60mm,nomargin,minimum height=14mm] at (1,-18.8) {\Large \makebox[60mm]{\centering \@teacher}};
     \node[draw,text width=15mm,nomargin,minimum height=10mm] at (4.75,-17.6) {\large \bf \makebox[15mm]{\centering 学年}};
-    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (4.75,-18.8) {\large \makebox[15mm]{\centering \@grade}};
+    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (4.75,-18.8) {\Large \makebox[15mm]{\centering \@grade}};
     \node[draw,text width=20mm,nomargin,minimum height=10mm] at (6.5,-17.6) {\large \bf \makebox[20mm]{\centering 学期}};
-    \node[draw,text width=20mm,nomargin,minimum height=14mm] at (6.5,-18.8) {\large \makebox[20mm]{\centering \@semester}};
+    \node[draw,text width=20mm,nomargin,minimum height=14mm] at (6.5,-18.8) {\Large \makebox[20mm]{\centering \@semester}};
     \node[draw,text width=15mm,nomargin,minimum height=10mm] at (8.25,-17.6) {\large \bf \makebox[15mm]{\centering 単位}};
-    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (8.25,-18.8) {\large \makebox[15mm]{\centering \@credits}};
+    \node[draw,text width=15mm,nomargin,minimum height=14mm] at (8.25,-18.8) {\Large \makebox[15mm]{\centering \@credits}};
 
     % テーマ番号〜
     \node[draw,text width=100mm,nomargin,minimum height=10mm] at (-4,-20) {\large \bf \makebox[100mm]{\centering テーマ番号~~~~~~テーマ名}};
-    \node[draw,text width=100mm,nomargin,minimum height=14mm] at (-4,-21.2) {\large \makebox[100mm]{\centering \@title}};
+    \node[draw,text width=100mm,nomargin,minimum height=14mm] at (-4,-21.2) {\Large \makebox[100mm]{\centering \@title}};
     \node[draw,text width=80mm,nomargin,minimum height=10mm] at (5,-20) {\large \bf \makebox[80mm]{\centering 学籍番号~~~~~~氏~~名}};
-    \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\large \makebox[80mm]{\centering \@studentid~\@author}};
+    \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\Large \makebox[80mm]{\centering \@studentid~\@author}};
   \end{scope}
 \end{tikzpicture}
 
