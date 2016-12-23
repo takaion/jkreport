@@ -1,0 +1,85 @@
+\documentclass[uplatex]{jsarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{jkreport}
+\usepackage[top=13mm, left=13mm, includeheadfoot]{geometry}
+
+% よく使うであろうパッケージ
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{jlisting}
+
+\lstset{
+  language={C},
+  basicstyle={\small},
+  identifierstyle={\small},
+  commentstyle={\small},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  showstringspaces = false,
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex,
+  showstringspaces = false
+}
+
+\renewcommand{\labelitemi}{・} %箇条書きの丸の大きさ
+\renewcommand{\thefootnote}{*\arabic{footnote}} %注釈
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}} %数式番号（章番号.式番号）
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}} %図番号
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}} %表番号
+\renewcommand{\lstlistingname}{リスト} %リスト番号
+\renewcommand{\thelstnumber}{\arabic{lstnumber}:} %行番号
+\makeatletter
+\@addtoreset{equation}{section}
+\@addtoreset{figure}{section}
+\@addtoreset{table}{section}
+\AtBeginDocument{
+  \renewcommand*{\thelstlisting}{\arabic{section}.\arabic{lstlisting}}
+  \@addtoreset{lstlisting}{section}
+}
+\makeatother
+
+\begin{document}
+\classname{現代文}
+\credits{32}
+\semester{後期}
+\teacher{大辻隆弘}
+\title{山月記}
+\studentid{1145141919810}
+\author{野獣先輩}
+\grade{2}
+\partner{李徴子}
+\partner{中島敦}
+\dateOfExpm{2016/12/08}
+\dateOfExpm{2114/05/14}
+\submit{2017/08/10}
+\submit{3019/01/09}
+\deadline{2017/12/08}
+\deadline{3016/12/08}
+
+\maketitle
+\thispagestyle{empty}
+\newgeometry{top=3cm, left=2cm, bottom=3cm, centering, lines=40}
+
+\section{はじめに}
+
+\section{方法}
+
+\section{結果}
+
+\section{考察}
+
+\begin{thebibliography}{2}
+\bibitem{original} 中島敦，「山月記」，青空文庫 http://www.aozora.gr.jp/cards/000119/files/624\_14544.html
+\bibitem{shindanmaker} たかイオン，「山月記」，診断メーカー https://shindanmaker.com/601003
+\end{thebibliography}
+
+\end{document}
