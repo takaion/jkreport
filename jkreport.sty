@@ -110,7 +110,10 @@
 \begin{tikzpicture}[remember picture]
   \begin{scope}[shift={(current page.south west)}]
     \node[text width=\pagewidth]  at (0,0)   {\huge \bf \makebox[\pagewidth]{\centering 情報工学科~レポート}};
-    
+
+    % 外枠
+    \node[draw,very thick,text width=\tablewidth,nomargin,minimum height=206mm] at (0,-11.6) {\null};
+
     % 最上段の行
     \node[draw,text width=\recordwidth,nomargin,minimum height=14mm] at (-3.5,-2) {\Large \bf \makebox[\recordwidth]{\centering 実験演習記録}};
     \node[draw,text width=\resultwidth,nomargin,minimum height=14mm] at (5.5,-2) {\Large \bf \makebox[\resultwidth]{\centering 判定・指示}};
