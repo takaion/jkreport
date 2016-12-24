@@ -15,7 +15,7 @@ jkreport.styとともにtexmf-local/texディレクトリに入れるか，あ�
 
 - tlarray ([ダウンロード](https://github.com/wtsnjp/TLArray))
 - tikz ([TeX Wikiによる説明](https://texwiki.texjp.org/?TikZ)，[ダウンロード](http://www.ctan.org/pkg/pgf))
-- geometry ([Tex Wikiによる説明](https://texwiki.texjp.org/?geometry)，[ダウンロード](https://www.ctan.org/pkg/geometry))
+- geometry ([TeX Wikiによる説明](https://texwiki.texjp.org/?geometry)，[ダウンロード](https://www.ctan.org/pkg/geometry))
 
 tikz，geometryパッケージは，`tlmgr`を使えば簡単にインストールできます: `tlmgr install pgf geometry`
 
