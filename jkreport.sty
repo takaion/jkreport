@@ -112,7 +112,10 @@
     \node[text width=\pagewidth]  at (0,0)   {\huge \bf \makebox[\pagewidth]{\centering 情報工学科~レポート}};
 
     % 外枠
-    \node[draw,very thick,text width=\tablewidth,nomargin,minimum height=206mm] at (0,-11.6) {\null};
+    \node[draw,ultra thick,text width=\tablewidth,nomargin,minimum height=206mm] at (0,-11.6) {\null};
+
+    % 左の枠
+    \node[draw,very thick,text width=\recordwidth,nomargin,minimum height=158mm] at (-3.5,-9.2) {\null};
 
     % 最上段の行
     \node[draw,text width=\recordwidth,nomargin,minimum height=14mm] at (-3.5,-2) {\Large \bf \makebox[\recordwidth]{\centering 実験演習記録}};
@@ -136,7 +139,7 @@
     }
 
     % 右: 判定コメント欄
-    \node[draw,text width=\resultwidth,nomargin,minimum height=144mm] at (5.5,-9.9){\null};
+    \node[draw,very thick,text width=\resultwidth,nomargin,minimum height=144mm] at (5.5,-9.9){\null};
 
     % レポート提出記録
     \node[draw,text width=\recordwidth,nomargin,minimum height=14mm] at (-3.5,-10.4) {\Large \bf \makebox[\recordwidth]{\centering レポート提出記録}};
@@ -157,6 +160,9 @@
     \foreach \i in {3,4,5}{
       \node[draw,text width=\numwidth,nomargin,minimum height=10mm] at ($\i*(0,-1)+(-8.5,-11.6)$) {\makebox[\numwidth]{\null}};
     }
+
+    % 科目名等の欄
+    \node[draw,very thick,text width=180mm,nomargin,minimum height=24mm] at (0,-18.3) {\null};
 
     % 科目名〜
     \node[draw,text width=70mm,nomargin,minimum height=10mm] at (-5.5,-17.6) {\large \bf \makebox[70mm]{\centering 科目名}};
