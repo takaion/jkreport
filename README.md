@@ -29,6 +29,7 @@ tikz，geometryパッケージは，`tlmgr`を使えば簡単にインストー�
 ```
 \documentclass{jsarticle}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{color}
 \usepackage{jkreport}
 
 \begin{document}
