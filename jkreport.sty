@@ -1,6 +1,6 @@
 \usepackage{tikz}
 \usepackage{tlarray}
-\usepackage{geometry}
+\usepackage[pass]{geometry}
 
 \NewArray[6][\null]{submit}
 \NewArray[6][\null]{deadline}
@@ -107,16 +107,17 @@
 \AddL{45mm}{0mm}{\expdatewidth}
 \AddL{55mm}{0mm}{\partnerwidth}
 
-\renewcommand{\maketitle}{\par
+\renewcommand{\maketitle}{
 \begingroup
 \newgeometry{top=13mm,left=13mm,includeheadfoot}
 \@maketitle
-\newgeometry{top=3.5cm,left=3cm,bottom=3cm,centering,lines=40}
+\restoregeometry
 \endgroup
 }
 
 \renewcommand{\@maketitle}{
 \thispagestyle{empty}
+\setcounter{page}{0}
 \begin{tikzpicture}[remember picture]
   \begin{scope}[shift={(current page.south west)}]
     \node[text width=\pagewidth]  at (0,0)   {\huge \bf \makebox[\pagewidth]{\centering 情報工学科~レポート}};
@@ -193,7 +194,4 @@
     \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\Large \makebox[80mm]{\centering \@studentid~\@author}};
   \end{scope}
 \end{tikzpicture}
-
-\clearpage
-\setcounter{page}{1}
 }
