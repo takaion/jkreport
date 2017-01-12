@@ -23,6 +23,8 @@
 \def\semester#1{\gdef\@semester{#1}}
 \def\title#1{\gdef\@title{#1}}
 
+\newcounter{length}
+
 \newcounter{deadlineIndex}
 \newcounter{submitIndex}
 \newcounter{partnerIndex}
@@ -176,10 +178,27 @@
     \node[draw,very thick,text width=180mm,nomargin,minimum height=24mm] at (0,-18.3) {\null};
 
     % 科目名〜
-    \node[draw,text width=70mm,nomargin,minimum height=10mm] at (-5.5,-17.6) {\large \bf \makebox[70mm]{\centering 科目名}};
-    \node[draw,text width=70mm,nomargin,minimum height=14mm] at (-5.5,-18.8) {\Large \makebox[70mm]{\centering \@classname}};
-    \node[draw,text width=60mm,nomargin,minimum height=10mm] at (1,-17.6) {\large \bf \makebox[60mm]{\centering テーマ担当教員}};
-    \node[draw,text width=60mm,nomargin,minimum height=14mm] at (1,-18.8) {\Large \makebox[60mm]{\centering \@teacher}};
+    \node[draw,text width=80mm,nomargin,minimum height=10mm] at (-5.0,-17.6) {\large \bf \makebox[80mm]{\centering 科目名}};
+    \node[draw,text width=80mm,nomargin,minimum height=14mm] at (-5.0,-18.8) {\makebox[80mm]
+      {\centering 
+        \setcounter{length}{0}
+        \expandafter\@tfor\expandafter\member\expandafter:\expandafter=\@classname\do{\stepcounter{length}}
+        \ifnum \value{length}<11{
+          \Large{\@classname}
+        }\else{
+          \ifnum \value{length}<16{
+            \large{\@classname}
+          }\else{
+            \ifnum \value{length}<21{
+              \@classname
+            }\else{
+              \small{\@classname}
+            }\fi
+          }\fi
+        }\fi
+    }};
+    \node[draw,text width=50mm,nomargin,minimum height=10mm] at (1.5,-17.6) {\large \bf \makebox[50mm]{\centering テーマ担当教員}};
+    \node[draw,text width=50mm,nomargin,minimum height=14mm] at (1.5,-18.8) {\Large \makebox[50mm]{\centering \@teacher}};
     \node[draw,text width=15mm,nomargin,minimum height=10mm] at (4.75,-17.6) {\large \bf \makebox[15mm]{\centering 学年}};
     \node[draw,text width=15mm,nomargin,minimum height=14mm] at (4.75,-18.8) {\Large \makebox[15mm]{\centering \@grade}};
     \node[draw,text width=20mm,nomargin,minimum height=10mm] at (6.5,-17.6) {\large \bf \makebox[20mm]{\centering 学期}};
