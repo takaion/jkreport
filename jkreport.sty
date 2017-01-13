@@ -23,8 +23,6 @@
 \def\semester#1{\gdef\@semester{#1}}
 \def\title#1{\gdef\@title{#1}}
 
-\newcounter{length}
-
 \newcounter{deadlineIndex}
 \newcounter{submitIndex}
 \newcounter{partnerIndex}
@@ -180,16 +178,17 @@
     % 科目名〜
     \node[draw,text width=80mm,nomargin,minimum height=10mm] at (-5.0,-17.6) {\large \bf \makebox[80mm]{\centering 科目名}};
     \node[draw,text width=80mm,nomargin,minimum height=14mm] at (-5.0,-18.8) {\makebox[80mm]
-      {\centering 
-        \setcounter{length}{0}
-        \expandafter\@tfor\expandafter\member\expandafter:\expandafter=\@classname\do{\stepcounter{length}}
-        \ifnum \value{length}<18{
+      {\centering
+        \newcounter{classNameLength}
+        \setcounter{classNameLength}{0}
+        \expandafter\@tfor\expandafter\member\expandafter:\expandafter=\@classname\do{\stepcounter{classNameLength}}
+        \ifnum \value{classNameLength}<18{
           \Large{\@classname}
         }\else{
-          \ifnum \value{length}<21{
+          \ifnum \value{classNameLength}<21{
             \large{\@classname}
           }\else{
-            \ifnum \value{length}<24{
+            \ifnum \value{classNameLength}<24{
               \@classname
             }\else{
               \small{\@classname}
@@ -208,7 +207,25 @@
 
     % テーマ番号〜
     \node[draw,text width=100mm,nomargin,minimum height=10mm] at (-4,-20) {\large \bf \makebox[100mm]{\centering テーマ番号~~~~~~テーマ名}};
-    \node[draw,text width=100mm,nomargin,minimum height=14mm] at (-4,-21.2) {\Large \makebox[100mm]{\centering \@title}};
+    \node[draw,text width=100mm,nomargin,minimum height=14mm] at (-4,-21.2) {\makebox[100mm]
+      {\centering
+        \newcounter{titleLength}
+        \setcounter{titleLength}{0}
+        \expandafter\@tfor\expandafter\member\expandafter:\expandafter=\@title\do{\stepcounter{titleLength}}
+        \ifnum \value{titleLength}<21{
+          \Large{\@title}
+        }\else{
+          \ifnum \value{titleLength}<25{
+            \large{\@title}
+          }\else{
+            \ifnum \value{titleLength}<29{
+              \@title
+            }\else{
+              \small{\@title}
+            }\fi
+          }\fi
+        }\fi
+      }};
     \node[draw,text width=80mm,nomargin,minimum height=10mm] at (5,-20) {\large \bf \makebox[80mm]{\centering 学籍番号~~~~~~氏~~名}};
     \node[draw,text width=80mm,nomargin,minimum height=14mm] at (5,-21.2) {\Large \makebox[80mm]{\centering \@studentid~\@author}};
   \end{scope}
