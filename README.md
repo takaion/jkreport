@@ -4,7 +4,7 @@ version 1.0.2
 
 ## 概要
 じょっこー用レポート表紙をLaTeXスタイルファイルとして実装しました．
-Word，LaTeXそれぞれで表紙と本文のPDFを作成して連結させる必要がなくなります．
+Word，LaTeXそれぞれで表紙と本文のPDFを作成して連結させる必要がなくなります．（Cloud LaTeX にて動作を確認しました．（2017年1月19日確認））
 
 ## インストール
 texmf-local/texディレクトリに入れるか，あなたのレポート用.texファイルがあるディレクトリに入れてください．
@@ -28,8 +28,8 @@ tikz，geometryパッケージは，`tlmgr`を使えば簡単にインストー�
 
 ```
 \documentclass{jsarticle}
-\usepackage[dvipdfmx]{graphicx}
 \usepackage{color}
+\usepackage[dvipdfmx]{graphicx}
 \usepackage{jkreport}
 
 \begin{document}
@@ -56,3 +56,4 @@ tikz，geometryパッケージは，`tlmgr`を使えば簡単にインストー�
 ### 表紙を生成する
 変数を設定したら，`\maketitle`で表紙ページを生成します．
 その後はいつも通りに本文を書いていくだけです．
+
