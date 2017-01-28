@@ -19,7 +19,8 @@ jkreport.sty を使えば，これらの問題は全て解決です．
 
 ## インストール
 texmf-local/texディレクトリに入れるか，あなたのレポート用.texファイルがあるディレクトリに入れてください．
-texmf-localディレクトリについては，TeX Wikiの[この記事](https://texwiki.texjp.org/?TeX%20%E3%81%AE%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E6%A7%8B%E6%88%90)に詳しく記載されています．texmf-localディレクトリに入れることで，何回もjkrepot.styをコピーする必要はなくなりますが，mktexlsrコマンドを実行しなければLaTeXのコマンドに認識されないことに注意して下さい．
+texmf-localディレクトリについては，TeX Wikiの[この記事](https://texwiki.texjp.org/?TeX%20%E3%81%AE%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E6%A7%8B%E6%88%90)に詳しく記載されています．
+texmf-localディレクトリに入れることで，何回もjkreport.styをコピーする必要はなくなりますが，mktexlsrコマンドを実行しなければLaTeXのコマンドに認識されないことに注意して下さい．
 
 ### 依存ライブラリ
 jkreport.styを使用するためには，以下のライブラリが必要です．
