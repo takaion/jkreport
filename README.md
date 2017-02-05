@@ -1,6 +1,6 @@
 # jkreport.sty
 じょっこーのためのLaTeXスタイルファイル
-version 1.0.2
+version 1.0.3
 
 ## 概要
 じょっこー用レポート表紙をLaTeXスタイルファイルとして実装しました．
