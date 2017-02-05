@@ -49,6 +49,8 @@ tikz，geometryパッケージは，`tlmgr`を使えば簡単にインストー�
 \end{document}
 ```
 
+注意: `sample.tex`，`template.tex`では`\documentclass[uplatex]{jsarticle}`となっています．これは，upLaTeX をエンジンとして使用するためです．他のエンジン（pLaTeX，XeLaTeX など）を使用する場合は，適宜変更してください．
+
 ### 変数を設定する
 デフォルトで使われているtitle，author，dateの少なすぎる項目の代わりに，jkreport.styは以下の項目をマクロで変数的に使えるようにしました．
 
@@ -72,9 +74,9 @@ tikz，geometryパッケージは，`tlmgr`を使えば簡単にインストー�
 ### フォントサイズを変えたい場合
 LaTeX 標準のフォントサイズは10ptとなっています．このサイズが小さいと感じたときは，たとえば次のコマンドを`\maketitle`の直後に置いてください．
 
-- \fontsize{11pt}{16.5pt}\selectfont
+- `\fontsize{11pt}{17.6pt}\selectfont`
 
-この場合，文字のサイズが11pt，行送りサイズが16.5ptとなります．
+この場合，文字のサイズが11pt，行送りサイズが17.6ptとなります．
 
 注意: `\documentclass[11pt]{jsarticle}`と設定すると，表紙の体裁が大きく崩れてしまいます．フォントサイズを変更したい場合は，上記の方法でお願い致します．
 
